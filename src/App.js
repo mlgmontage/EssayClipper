@@ -1,8 +1,17 @@
 import React, { Component } from "react";
+import Navbar from "./components/Navbar";
+
+/**
+ * TODO: Setup react-router-dom
+ */
 
 class App extends Component {
   render() {
-    return <h1>Hello, App</h1>;
+    return (
+      <div className="container">
+        <Navbar />
+      </div>
+    );
   }
 }
 
