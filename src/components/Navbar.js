@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 /**
  * TODO: Make working links
+ * * Bootstrap classes are so verbose!!
  */
 
 class Navbar extends Component {
@@ -24,7 +25,7 @@ class Navbar extends Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Explore
+                    Create
                   </a>
                 </li>
                 <li className="nav-item">
