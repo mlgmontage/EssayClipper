@@ -29,9 +29,9 @@ class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link className="nav-link" to="/archive">
                     <i className="fa fa-archive"></i> Archive
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
