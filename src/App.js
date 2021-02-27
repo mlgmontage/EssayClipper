@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Splash from "./components/Splash";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Snipets from "./components/Snipets";
+import Create from "./components/Create";
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Splash} />
             <Route path="/snipets" exact component={Snipets} />
+            <Route path="/create" exact component={Create} />
           </Switch>
         </div>
       </Router>
