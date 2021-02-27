@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import marked from "marked";
 
 /**
  * TODO: toggle button, handle change
@@ -65,7 +66,12 @@ class Create extends Component {
             </div>
           </div>
         ) : (
-          <div> toggle </div>
+          <div>
+            <div className="lead">{this.state.title}</div>
+            <div
+              dangerouslySetInnerHTML={{ __html: marked(this.state.markdown) }}
+            ></div>
+          </div>
         )}
       </div>
     );
