@@ -2,4 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-ReactDOM.render(<h1>hello</h1>, document.getElementById("root"));
+ReactDOM.render(<h1>hello, world</h1>, document.getElementById("root"));
+
+module.hot.accept();

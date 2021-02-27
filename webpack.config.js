@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "none",
@@ -10,6 +11,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
   },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: [
       {
@@ -18,6 +20,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: ["babel-loader"],
       },
     ],
