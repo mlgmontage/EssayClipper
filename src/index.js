@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "highlight.js/styles/obsidian.css";
 import "./index.css";
 import App from "./App";
 

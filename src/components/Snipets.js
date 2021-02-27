@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import marked from "marked";
+import highlightJS from "highlight.js";
 import data from "../data";
 
+marked.setOptions({
+  highlight: (code, lang) => {
+    return highlightJS.highlight(lang, code).value;
+  },
+});
+
 /**
- * TODO: Next, prev buttons & functions. Keybindings
+ * TODO: Archive button
  * TODO: Fetching from API
  */
 
