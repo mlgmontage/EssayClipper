@@ -24,6 +24,20 @@ class Snipets extends Component {
             __html: marked(this.state.data[this.state.index].markdown),
           }}
         ></div>
+        <div
+          className="row mb-4 mt-4"
+          style={{ fontSize: "50px", cursor: "pointer" }}
+        >
+          <div className="col-md text-center">
+            <i className="fa fa-arrow-left"></i>
+          </div>
+          <div className="col-md text-center">
+            <i className="fa fa-archive"></i>
+          </div>
+          <div className="col-md text-center">
+            <i className="fa fa-arrow-right"></i>
+          </div>
+        </div>
       </div>
     );
   }
