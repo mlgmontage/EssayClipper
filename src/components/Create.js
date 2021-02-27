@@ -9,13 +9,22 @@ class Create extends Component {
     super(props);
     this.state = {
       EditMode: true,
+      title: "",
+      markdown: "",
     };
     this.toggleEditMode = this.toggleEditMode.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   toggleEditMode() {
     this.setState({
       EditMode: !this.state.EditMode,
+    });
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -28,10 +37,20 @@ class Create extends Component {
         {this.state.EditMode ? (
           <div>
             <div className="mt-3">
-              <input type="text" className="form-control" placeholder="title" />
+              <input
+                type="text"
+                onChange={this.handleChange}
+                name="title"
+                value={this.state.title}
+                className="form-control"
+                placeholder="title"
+              />
             </div>
             <div className="mt-3">
               <textarea
+                name="markdown"
+                onChange={this.handleChange}
+                value={this.state.markdown}
                 type="text"
                 className="form-control"
                 placeholder="markdown"
