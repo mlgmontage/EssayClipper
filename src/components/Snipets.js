@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 /**
- * * Snipets dummy component
+ * TODO: Next, prev buttons. Keybindings
+ * TODO: Fetching from API
  */
 
 class Snipets extends Component {
