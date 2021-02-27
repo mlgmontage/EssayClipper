@@ -4,10 +4,6 @@ import Splash from "./components/Splash";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Snipets from "./components/Snipets";
 
-/**
- * TODO: Setup react-router-dom
- */
-
 class App extends Component {
   render() {
     return (
