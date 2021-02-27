@@ -5,6 +5,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Snipets from "./components/Snipets";
 import Create from "./components/Create";
 
+/**
+ * TODO: Individual component for sharing snipets
+ */
+
 class App extends Component {
   render() {
     return (
