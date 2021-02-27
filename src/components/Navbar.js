@@ -15,22 +15,22 @@ class Navbar extends Component {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link className="nav-link" to="/">
-                    Home
+                    <i className="fa fa-home"></i> Home
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/snipets">
-                    Snipets
+                    <i className="fa fa-cut"></i> Snipets
                   </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Create
+                    <i className="fa fa-plus"></i> Create
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Archive
+                    <i className="fa fa-archive"></i> Archive
                   </a>
                 </li>
               </ul>

@@ -17,8 +17,8 @@ class Snipets extends Component {
   }
   render() {
     return (
-      <div>
-        <h4>{this.state.data[this.state.index].title}</h4>
+      <div className="mt-5">
+        <h4 className="lead">{this.state.data[this.state.index].title}</h4>
         <div
           dangerouslySetInnerHTML={{
             __html: marked(this.state.data[this.state.index].markdown),
