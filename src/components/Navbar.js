@@ -9,7 +9,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid ">
+        <div className="container-fluid">
           <Link className="navbar-brand " to="/">
             <i className="fa fa-paperclip"></i> EssayClipper
           </Link>

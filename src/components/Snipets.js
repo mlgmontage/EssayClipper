@@ -18,6 +18,7 @@ class Snipets extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.archive = this.archive.bind(this);
+    this.delete = this.delete.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
@@ -67,10 +68,27 @@ class Snipets extends Component {
     console.log("archive");
   }
 
+  delete(id) {
+    fetch(`${host}/api/snipets/${id}`, { method: "delete" }).then(
+      (response) => {
+        if (response.status == 200) {
+          console.log("deleted");
+        }
+      }
+    );
+  }
+
   render() {
     return (
       <div className="mt-5">
-        <h4 className="lead">{this.state.data[this.state.index].title}</h4>
+        <h4 className="lead">
+          {this.state.data[this.state.index].title}{" "}
+          <i
+            style={{ cursor: "pointer" }}
+            onClick={() => this.delete(this.state.data[this.state.index]._id)}
+            className="fa fa-trash"
+          ></i>
+        </h4>
         <div
           dangerouslySetInnerHTML={{
             __html: marked(this.state.data[this.state.index].markdown),
@@ -89,6 +107,11 @@ class Snipets extends Component {
           <div className="col-md text-center" onClick={this.next}>
             <i className="fa fa-arrow-right"></i>
           </div>
+        </div>
+        <div className="text-center">
+          <small className="text-muted">
+            Press "j" to go previous, press "l" to go next
+          </small>
         </div>
       </div>
     );
