@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import marked from "marked";
 import host from "../host";
 
-/**
- * TODO: toggle button, handle change
- */
-
 class Create extends Component {
   constructor(props) {
     super(props);

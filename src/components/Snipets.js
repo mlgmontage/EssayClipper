@@ -5,7 +5,6 @@ import host from "../host";
 
 /**
  * TODO: Archive button
- * TODO: Fetching from API
  */
 
 class Snipets extends Component {
