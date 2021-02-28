@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import marked from "marked";
+import host from "../host";
 
 /**
  * TODO: toggle button, handle change
@@ -13,8 +14,33 @@ class Create extends Component {
       title: "",
       markdown: "",
     };
+    this.submit = this.submit.bind(this);
     this.toggleEditMode = this.toggleEditMode.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  submit() {
+    if (this.state.title.trim() != "" && this.state.markdown.trim() != "") {
+      fetch(`${host}/api/snipets/create`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "post",
+        body: JSON.stringify({
+          title: this.state.title,
+          markdown: this.state.markdown,
+          isArchived: false,
+        }),
+      }).then((response) => {
+        if (response.status == 200) {
+          this.setState({
+            title: "",
+            markdown: "",
+          });
+          console.log("created");
+        }
+      });
+    }
   }
 
   toggleEditMode() {
@@ -32,11 +58,11 @@ class Create extends Component {
   render() {
     return (
       <div>
-        <div className="btn btn-secondary" onClick={this.toggleEditMode}>
+        <div className="btn btn-secondary mt-3" onClick={this.toggleEditMode}>
           <i className="fa fa-eye"></i>
         </div>
         {this.state.EditMode ? (
-          <div>
+          <form onSubmit={this.submit}>
             <div className="mt-3">
               <input
                 type="text"
@@ -61,15 +87,17 @@ class Create extends Component {
             <div
               style={{ fontSize: "50px", cursor: "pointer" }}
               className="text-center"
+              onClick={this.submit}
             >
               <i className="fa fa-paperclip"></i>
             </div>
-          </div>
+          </form>
         ) : (
           <div>
-            <div className="lead">{this.state.title}</div>
+            <div className="lead mt-3">{this.state.title}</div>
             <div
               dangerouslySetInnerHTML={{ __html: marked(this.state.markdown) }}
+              className="mt-3"
             ></div>
           </div>
         )}
