@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import marked from "marked";
 import data from "../data";
+import host from "../host";
 
 /**
  * TODO: Archive button
@@ -22,6 +23,15 @@ class Snipets extends Component {
   }
 
   componentDidMount() {
+    fetch(`${host}/api/snipets`)
+      .then((response) => response.json())
+      .then((json) => {
+        if (json != [] || json != undefined || json != null) {
+          this.setState({
+            data: json,
+          });
+        }
+      });
     document.addEventListener("keypress", this.handleKeyPress);
   }
 
