@@ -3,7 +3,7 @@ export default [
     title: "first",
     markdown: "## Hello",
     isArchived: false,
-    comments: [{ markdown: "" }],
+    comments: [{ markdown: "_this is comment_" }],
   },
   {
     title: "second",

@@ -67,6 +67,20 @@ class Snipets extends Component {
             __html: marked(this.state.data[this.state.index].markdown),
           }}
         ></div>
+        {this.state.data[this.state.index].comments != [] ? (
+          <div>
+            {this.state.data[this.state.index].comments.map((comment) => (
+              <div key={comment.markdown}>
+                <hr />
+                <div
+                  dangerouslySetInnerHTML={{ __html: marked(comment.markdown) }}
+                ></div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          ""
+        )}
         <div
           className="row mb-4 mt-4"
           style={{ fontSize: "50px", cursor: "pointer" }}
