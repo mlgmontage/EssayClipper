@@ -10,7 +10,8 @@ import App from "./App";
 
 marked.setOptions({
   highlight: (code, lang) => {
-    return highlightJS.highlight(lang, code).value;
+    const validLang = highlightJS.getLanguage(lang) ? lang : "plaintext";
+    return highlightJS.highlight(validLang, code).value;
   },
 });
 
